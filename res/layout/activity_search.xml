@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/padding_top"
-    android:paddingLeft="@dimen/padding_left"
     tools:context="${packageName}.${activityClass}" >
 
     <EditText
@@ -22,19 +21,59 @@
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/etQuery"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/etQuery"
         android:onClick="onImageSearch"
         android:text="@string/search" />
 
     <GridView
         android:id="@+id/gvResults"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvFiltered"
+        android:layout_marginTop="10dp"
+        android:numColumns="auto_fit"
+        android:columnWidth="90dp"
+        android:colorBackground="@android:color/darker_gray"
+        android:horizontalSpacing="1dp"
+        android:verticalSpacing="1dp"
+        android:drawSelectorOnTop="true"
+        android:stretchMode="columnWidth"
+        android:gravity="center" >
+    </GridView>
+
+    <TextView
+        android:id="@+id/tvFiltered"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/btnSearch"
-        android:layout_marginTop="10dp"
-        android:numColumns="3" >
-    </GridView>
+        android:layout_marginTop="20dp"
+        android:onClick="onSettings"
+        android:text="@string/filtered"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="italic"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvClearFilters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/gvResults"
+        android:layout_alignBaseline="@+id/tvFiltered"
+        android:layout_below="@id/btnSearch"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tvFiltered"
+        android:clickable="true"
+        android:onClick="onClear"
+        android:text="@string/clear_filters"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:visibility="invisible"
+        android:textColor="#33b5e5" />
 
 </RelativeLayout>

@@ -3,10 +3,19 @@
 
     <string name="app_name">Image Rover</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_settings">Search Filters</string>
     <string name="settings">Settings</string>
     <string name="query_hint">Enter search term</string>
     <string name="search">Search</string>
-    <string name="title_activity_image_display">ImageDisplayActivity</string>
+    <string name="title_activity_image_display">Image Rover Detail</string>
+    <string name="filtered">Filters applied to results</string>
+    <string name="clear_filters">Clear filters</string>
+    <string name="radio_Icon">Icon</string>
+    <string name="radio_Medium">Medium</string>
+    <string name="radio_large">Large</string>
+    <string name="image_size">Image Size</string>
+    <string name="radio_any">Any</string>
+    <string name="back">Back</string>
+    <string name="set_filters">Set Filters</string>
 
 </resources>

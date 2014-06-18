@@ -5,14 +5,15 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="10"
+        android:minSdkVersion="14"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_image_rover"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -25,12 +26,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.codepath.wangela.apps.image.SettingsActivity"
-            android:label="@string/title_activity_settings" >
+            android:name="com.codepath.wangela.apps.image.FilterSettings"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="com.codepath.wangela.apps.image.SearchActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.codepath.wangela.apps.image.SearchActivity" >
+            </meta-data>
         </activity>
         <activity
             android:name="com.codepath.wangela.apps.image.ImageDisplayActivity"
-            android:label="@string/title_activity_image_display" >
+            android:label="@string/title_activity_image_display"
+            android:parentActivityName="com.codepath.wangela.apps.image.SearchActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.codepath.wangela.apps.image.SearchActivity" >
+            </meta-data>
         </activity>
     </application>
 

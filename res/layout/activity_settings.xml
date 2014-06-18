@@ -2,23 +2,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/padding_top"
     tools:context="${packageName}.${activityClass}" >
 
-    <Button
-        android:id="@+id/btnSearch"
+    <RadioGroup
+        android:id="@+id/rgSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:onClick="onSubmit"
-        android:text="Button" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvSize"
+        android:layout_centerHorizontal="false"
+        android:layout_centerVertical="false"
+        android:contentDescription="@string/image_size"
+        android:gravity="left"
+        android:orientation="horizontal" >
 
-    <CheckBox
-        android:id="@+id/checkBox1"
+        <RadioButton
+            android:id="@+id/rbSizeAny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:tag=""
+            android:text="@string/radio_any" />
+
+        <RadioButton
+            android:id="@+id/rbSizeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:tag="icon"
+            android:text="@string/radio_Icon" />
+
+        <RadioButton
+            android:id="@+id/rbSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:tag="medium"
+            android:text="@string/radio_Medium" />
+
+        <RadioButton
+            android:id="@+id/rbSizeLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="xxlarge"
+            android:text="@string/radio_large" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="CheckBox" />
+        android:text="@string/image_size" />
+
+    <Button
+        android:id="@+id/btnSetFilters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgSize"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="onSubmit"
+        android:text="@string/set_filters" />
+
 
 </RelativeLayout>

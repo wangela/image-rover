@@ -19,10 +19,15 @@ public class ImageResultArrayAdapter extends ArrayAdapter<ImageResult> {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ImageResult imageInfo = this.getItem(position);
 		SmartImageView ivImage;
+		//ViewHolder viewHolder; // view lookup cache stored in tag
+		// Check if an existing view is being reused; otherwise, inflate the view
 		if (convertView == null) {
+			//viewHolder = new ViewHolder();
 			LayoutInflater inflater = LayoutInflater.from(getContext());
 			ivImage = (SmartImageView) inflater.inflate(R.layout.item_image_result, parent, false);
+			//ivImage.setTag(viewHolder);
 		} else {
+			//viewHolder = (ViewHolder) ivImage.getTag();
 			ivImage = (SmartImageView) convertView;
 			ivImage.setImageResource(android.R.color.transparent);
 		}
@@ -30,5 +35,9 @@ public class ImageResultArrayAdapter extends ArrayAdapter<ImageResult> {
 		return ivImage;
 	}
 	
+	// View lookup cache
+	//public static class ViewHolder {
+	//	SmartImageView ivImage;
+	//}
 	
 }
