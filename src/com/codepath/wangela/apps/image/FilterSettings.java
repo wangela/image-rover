@@ -87,7 +87,6 @@ public class FilterSettings extends Activity implements Serializable {
 		
 		site = etSite.getText().toString();
 		
-		Toast.makeText(this, "Type filter set to " + type, Toast.LENGTH_SHORT).show();
 		filters.size = size;
 		filters.type = type;
 		filters.site = site;
