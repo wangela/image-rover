@@ -22,6 +22,7 @@ Completed user stories:
 Notes:
 
 Top priorities for next rev:
+ * Add Spinner view for selecting color filter in search settings
  * Share an image
  * Handle network availability errors
  * Show saved filter states on subsequent views of FilterSettings activity
