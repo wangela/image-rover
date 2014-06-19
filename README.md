@@ -22,9 +22,9 @@ Completed user stories:
 Notes:
 
 Top priorities for next rev:
-Share an image
-Handle network availability errors
-Show saved filter states on subsequent views of FilterSettings activity
+ * Share an image
+ * Handle network availability errors
+ * Show saved filter states on subsequent views of FilterSettings activity
 
 Walkthrough of all user stories:
 
