@@ -61,11 +61,88 @@
         android:id="@+id/btnSetFilters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rgSize"
+        android:layout_below="@+id/etSite"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:onClick="onSubmit"
         android:text="@string/set_filters" />
 
+    <RadioGroup
+        android:id="@+id/rgType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvType"
+        android:contentDescription="@string/image_size"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/rbTypeAny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:tag=""
+            android:text="@string/radio_any" />
+
+        <RadioButton
+            android:id="@+id/rbTypeFace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:tag="face"
+            android:text="@string/radio_face" />
+
+        <RadioButton
+            android:id="@+id/rbTypePhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:tag="photo"
+            android:text="@string/radio_photo" />
+
+        <RadioButton
+            android:id="@+id/rbTypeClipart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="clipart"
+            android:text="@string/radio_clipart" />
+
+        <RadioButton
+            android:id="@+id/rbTypeLineart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="lineart"
+            android:text="@string/radio_lineart" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/rgSize"
+        android:text="@string/image_type" />
+
+    <TextView
+        android:id="@+id/tvSite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rgType"
+        android:text="@string/image_site" />
+
+    <EditText
+        android:id="@+id/etSite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSite"
+        android:ems="10"
+        android:hint="@string/site_example" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

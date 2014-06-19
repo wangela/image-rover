@@ -17,5 +17,12 @@
     <string name="radio_any">Any</string>
     <string name="back">Back</string>
     <string name="set_filters">Set Filters</string>
+    <string name="image_type">Image Type</string>
+    <string name="radio_face">Face</string>
+    <string name="radio_photo">Photo</string>
+    <string name="radio_clipart">Clip Art</string>
+    <string name="radio_lineart">Line Art</string>
+    <string name="image_site">Website Domain</string>
+    <string name="site_example">example.com</string>
 
 </resources>

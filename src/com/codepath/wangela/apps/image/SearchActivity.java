@@ -111,6 +111,8 @@ public class SearchActivity extends Activity {
 			if (resultCode == RESULT_OK) {
 				filters = (FilterSettings) data.getSerializableExtra("filters");
 				params.put("imgsz", filters.getFilterSize());
+				params.put("imgtype", filters.getFilterType());
+				params.put("as_sitesearch", filters.getFilterSite());
 				onImageSearch(btnSearch);
 				tvFiltered.setVisibility(View.VISIBLE);
 				tvClearFilters.setVisibility(View.VISIBLE);
@@ -161,6 +163,8 @@ public class SearchActivity extends Activity {
 		tvFiltered.setVisibility(View.INVISIBLE);
 		tvClearFilters.setVisibility(View.INVISIBLE);
 		params.remove("imgsz");
+		params.remove("imgtype");
+		params.remove("as_sitesearch");
 		onImageSearch(btnSearch);
 	}
 

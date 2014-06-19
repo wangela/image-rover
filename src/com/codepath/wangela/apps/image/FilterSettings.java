@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -15,12 +16,17 @@ import android.widget.Toast;
 import com.loopj.android.http.RequestParams;
 
 public class FilterSettings extends Activity implements Serializable {
-	private String size;
-	//public String typeFilter;
+	private String size = "";
+	private String type = "";
+	private String site = "";
 	FilterSettings filters;
 	RadioGroup rgSize;
+	RadioGroup rgType;
+	EditText etSite;
 	int rbSizeSelected;
-	String sizeFilter;
+	int rbTypeSelected;
+	//String sizeFilter;
+	//String typeFilter;
 	
 	
 	@Override
@@ -29,6 +35,8 @@ public class FilterSettings extends Activity implements Serializable {
 		setContentView(R.layout.activity_settings);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		rgSize = (RadioGroup) findViewById(R.id.rgSize);
+		rgType = (RadioGroup) findViewById(R.id.rgType);
+		etSite = (EditText) findViewById(R.id.etSite);
 		
 		filters = (FilterSettings) getIntent().getSerializableExtra("filters");
 		
@@ -45,28 +53,44 @@ public class FilterSettings extends Activity implements Serializable {
 	    return super.onOptionsItemSelected(item);
 	}
 	
-	public RequestParams toParams() {
+//	public RequestParams toParams() {
 		// formatting the URL based on filters like ?type=faces&color=blue 
-		RequestParams params = new RequestParams();
+	//	RequestParams params = new RequestParams();
 		//params.put("imgcolor", rbImgColor);
-		params.put("size", sizeFilter);
-		//params.put("type", rbType);
+	//	params.put("size", sizeFilter);
+	//	params.put("type", typeFilter);
 		//params.put("as_rights", rbAsRights);
-		return params;
-	}
+	//	return params;
+//	}
 
 	public String getFilterSize() {
 		return size;
+	}
+	
+	public String getFilterType() {
+		return type;
+	}
+	
+	public String getFilterSite() {
+		return site;
 	}
 	
 	public void onSubmit(View v) {
 		// Pass filter settings back to Search (parent) activity
 		rbSizeSelected = rgSize.getCheckedRadioButtonId();
 		RadioButton rbSize = (RadioButton) findViewById(rbSizeSelected);
-		sizeFilter = rbSize.getTag().toString();
+		size = rbSize.getTag().toString();
 		
-		Toast.makeText(this, "Size filter set to " + sizeFilter, Toast.LENGTH_SHORT).show();
-		filters.size = sizeFilter;
+		rbTypeSelected = rgType.getCheckedRadioButtonId();
+		RadioButton rbType = (RadioButton) findViewById(rbTypeSelected);
+		type = rbType.getTag().toString();
+		
+		site = etSite.getText().toString();
+		
+		Toast.makeText(this, "Type filter set to " + type, Toast.LENGTH_SHORT).show();
+		filters.size = size;
+		filters.type = type;
+		filters.site = site;
 		
 		Intent i = new Intent();
 		i.putExtra("filters", filters);
