@@ -13,11 +13,11 @@ Completed user stories:
  * [x] Required: Subsequent searches will have any filters applied to the search results
  * [x] Required: User can scroll down “infinitely” to continue loading more image results (up to 8 pages)
  * [x] Required: User can tap on any image in results to see the image full-screen
- * [x] Optional: User can tap the full-screen image or the "Up" navigation icon to return to the search results screen
- * [x] Optional: In full-screen image view, display the domain where the image is found.
- * [x] Optional: Search results indicate whether filters were applied to this search
- * [x] Optional: User can clear all filters by clicking on "Clear filters" text
- * [x] Optional: Light styling with background colors and search results display grid
+ * [x] Extra: User can tap the full-screen image or the "Up" navigation icon to return to the search results screen
+ * [x] Extra: In full-screen image view, display the domain where the image is found.
+ * [x] Extra: Search results indicate whether filters were applied to this search
+ * [x] Extra: User can clear all filters by clicking on "Clear filters" text
+ * [x] Extra: Light styling with background colors and search results display grid
 
 Notes:
 
